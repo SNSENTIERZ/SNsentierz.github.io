@@ -12,15 +12,16 @@
 </header>
 
 <nav class="mode-tabs">
-  <button class="active">Overall</button>
-  <button>Sword</button>
-  <button>Axe</button>
-  <button>UHC</button>
-  <button>Crystal</button>
+  <button class="active" onclick="showTab('overall', this)">Overall</button>
+  <button onclick="showTab('sword', this)">Sword</button>
+  <button onclick="showTab('axe', this)">Axe</button>
+  <button onclick="showTab('rules', this)">Rules</button>
+  <button onclick="showTab('discord', this)">Discord</button>
 </nav>
 
 <main>
 
+  <!-- TABLE HEADER -->
   <div class="table-header">
     <span>#</span>
     <span>Player</span>
@@ -28,78 +29,67 @@
     <span>Tiers</span>
   </div>
 
-  <!-- RANK 1 -->
-  <div class="player-row">
-    <span class="rank gold">1</span>
-    <span class="player">
-      <img src="https://mc-heads.net/avatar/Steve/40">
-      PlayerOne
-    </span>
-    <span class="region na">NA</span>
-    <span class="tiers">
-      <span class="tier ht">HT1</span>
-      <span class="tier lt">LT1</span>
-    </span>
-  </div>
+  <!-- OVERALL -->
+  <section id="overall" class="tab active">
+    <div class="player-row">
+      <span class="rank gold">1</span>
+      <span class="player"><img src="https://mc-heads.net/avatar/Steve/40">PlayerOne</span>
+      <span class="region na">NA</span>
+      <span class="tiers"><span class="tier ht">HT1</span><span class="tier lt">LT1</span></span>
+    </div>
 
-  <!-- RANK 2 -->
-  <div class="player-row">
-    <span class="rank silver">2</span>
-    <span class="player">
-      <img src="https://mc-heads.net/avatar/Alex/40">
-      PlayerTwo
-    </span>
-    <span class="region eu">EU</span>
-    <span class="tiers">
-      <span class="tier ht">HT2</span>
-      <span class="tier lt">LT2</span>
-    </span>
-  </div>
+    <div class="player-row">
+      <span class="rank silver">2</span>
+      <span class="player"><img src="https://mc-heads.net/avatar/Alex/40">PlayerTwo</span>
+      <span class="region eu">EU</span>
+      <span class="tiers"><span class="tier ht">HT2</span><span class="tier lt">LT2</span></span>
+    </div>
+  </section>
 
-  <!-- RANK 3 -->
-  <div class="player-row">
-    <span class="rank bronze">3</span>
-    <span class="player">
-      <img src="https://mc-heads.net/avatar/Notch/40">
-      PlayerThree
-    </span>
-    <span class="region na">NA</span>
-    <span class="tiers">
-      <span class="tier ht">HT3</span>
-      <span class="tier lt">LT3</span>
-    </span>
-  </div>
+  <!-- SWORD -->
+  <section id="sword" class="tab">
+    <div class="player-row">
+      <span class="rank gold">1</span>
+      <span class="player"><img src="https://mc-heads.net/avatar/Notch/40">SwordGod</span>
+      <span class="region na">NA</span>
+      <span class="tiers"><span class="tier ht">HT1</span></span>
+    </div>
+  </section>
 
-  <!-- RANK 4 -->
-  <div class="player-row">
-    <span class="rank">4</span>
-    <span class="player">
-      <img src="https://mc-heads.net/avatar/Herobrine/40">
-      PlayerFour
-    </span>
-    <span class="region eu">EU</span>
-    <span class="tiers">
-      <span class="tier ht">HT4</span>
-      <span class="tier lt">LT4</span>
-    </span>
-  </div>
+  <!-- AXE -->
+  <section id="axe" class="tab">
+    <div class="player-row">
+      <span class="rank gold">1</span>
+      <span class="player"><img src="https://mc-heads.net/avatar/Dream/40">AxeKing</span>
+      <span class="region eu">EU</span>
+      <span class="tiers"><span class="tier ht">HT1</span></span>
+    </div>
+  </section>
 
-  <!-- RANK 5 -->
-  <div class="player-row">
-    <span class="rank">5</span>
-    <span class="player">
-      <img src="https://mc-heads.net/avatar/Dream/40">
-      PlayerFive
-    </span>
-    <span class="region na">NA</span>
-    <span class="tiers">
-      <span class="tier ht">HT5</span>
-      <span class="tier lt">LT5</span>
-    </span>
-  </div>
+  <!-- RULES -->
+  <section id="rules" class="tab rules">
+    <h2>Rules</h2>
+    <ul>
+      <li>No cheats, macros, or unfair mods.</li>
+      <li>Legit Minecraft clients only.</li>
+      <li>Evidence must be real and unedited.</li>
+      <li>Ping and region are considered.</li>
+      <li>Staff decisions are final.</li>
+      <li>Faking clips = blacklist.</li>
+    </ul>
+  </section>
+
+  <!-- DISCORD -->
+  <section id="discord" class="tab discord">
+    <h2>Join the Discord</h2>
+    <p>All tests and updates happen here:</p>
+    <a href="https://discord.gg/dNvcJqn54" target="_blank">
+      https://discord.gg/dNvcJqn54
+    </a>
+  </section>
 
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
-
