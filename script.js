@@ -1,9 +1,7 @@
-function showTab(tabId) {
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.classList.remove('active');
-  });
+function switchMode(mode, btn) {
+  document.querySelectorAll('.mode-tabs button')
+    .forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 
-  document.getElementById(tabId).classList.add('active');
+  // later: filter rows per mode
 }
-
-
