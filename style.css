@@ -5,43 +5,44 @@
 
 body {
   margin: 0;
-  background: #0b0b0b;
-  color: white;
+  background: #141414;
+  color: #e0e0e0;
 }
 
 header {
   text-align: center;
-  padding: 30px 15px;
+  padding: 20px;
+  border-bottom: 1px solid #2a0000;
 }
 
 header h1 {
-  color: #ff3b3b;
-  font-size: 2.8rem;
-  text-shadow: 0 0 10px red;
+  color: #8b1c1c;
+  margin: 0;
 }
 
-.mode-bar {
+.tabs {
   display: flex;
-  justify-content: center;
   gap: 8px;
   padding: 10px;
-  background: #111;
+  justify-content: center;
+  background: #161616;
+  border-bottom: 1px solid #2a0000;
 }
 
-.mode-bar button {
-  background: #111;
-  border: 1px solid red;
-  color: white;
+.tabs button {
+  background: transparent;
+  border: none;
+  color: #ccc;
   padding: 8px 14px;
   cursor: pointer;
 }
 
-.mode-bar button:hover {
-  background: red;
+.tabs button:hover {
+  color: #b22222;
 }
 
-.tiers {
-  max-width: 600px;
+main {
+  max-width: 900px;
   margin: auto;
   padding: 20px;
 }
@@ -54,20 +55,30 @@ header h1 {
   display: block;
 }
 
-.tier {
-  display: flex;
-  align-items: center;
-  background: #141414;
-  margin: 6px 0;
+.row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
   padding: 10px;
-  border-left: 4px solid red;
+  border-bottom: 1px solid #1f1f1f;
 }
 
-.tier span {
-  width: 60px;
+.row span {
+  color: #8b1c1c;
   font-weight: bold;
-  color: #ff3b3b;
 }
 
-.ht1 { box-shadow: 0 0 10px red; }
+.rules ul {
+  padding-left: 20px;
+}
+
+.rules li {
+  margin: 8px 0;
+}
+
+.discord a {
+  color: #b22222;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 
