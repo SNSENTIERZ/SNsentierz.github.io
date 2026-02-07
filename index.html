@@ -2,79 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SNsentierz Tiers</title>
+  <title>SNsentierz Rankings</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="topbar">
   <h1>SNsentierz</h1>
 </header>
 
-<nav class="tabs">
-  <button onclick="showTab('sword')">Sword</button>
-  <button onclick="showTab('axe')">Axe</button>
-  <button onclick="showTab('uhc')">UHC</button>
-  <button onclick="showTab('crystal')">Crystal</button>
-  <button onclick="showTab('smp')">SMP</button>
-  <button onclick="showTab('rules')">Rules</button>
-  <button onclick="showTab('discord')">Discord</button>
+<nav class="mode-tabs">
+  <button class="active" onclick="switchMode('overall', this)">Overall</button>
+  <button onclick="switchMode('sword', this)">Sword</button>
+  <button onclick="switchMode('axe', this)">Axe</button>
+  <button onclick="switchMode('uhc', this)">UHC</button>
+  <button onclick="switchMode('crystal', this)">Crystal</button>
 </nav>
 
 <main>
 
-  <!-- SWORD -->
-  <section id="sword" class="tab active">
-    <div class="row"><span>HT1</span> Player</div>
-    <div class="row"><span>LT1</span> Player</div>
-    <div class="row"><span>HT2</span> Player</div>
-    <div class="row"><span>LT2</span> Player</div>
-    <div class="row"><span>HT3</span> Player</div>
-    <div class="row"><span>LT3</span> Player</div>
-    <div class="row"><span>HT4</span> Player</div>
-    <div class="row"><span>LT4</span> Player</div>
-    <div class="row"><span>HT5</span> Player</div>
-    <div class="row"><span>LT5</span> Player</div>
-  </section>
+  <div class="table-header">
+    <span>#</span>
+    <span>Player</span>
+    <span>Region</span>
+    <span>Tiers</span>
+  </div>
 
-  <!-- AXE -->
-  <section id="axe" class="tab">
-    <div class="row"><span>HT1</span> Player</div>
-    <div class="row"><span>LT1</span> Player</div>
-    <div class="row"><span>HT2</span> Player</div>
-    <div class="row"><span>LT2</span> Player</div>
-    <div class="row"><span>HT3</span> Player</div>
-    <div class="row"><span>LT3</span> Player</div>
-    <div class="row"><span>HT4</span> Player</div>
-    <div class="row"><span>LT4</span> Player</div>
-    <div class="row"><span>HT5</span> Player</div>
-    <div class="row"><span>LT5</span> Player</div>
-  </section>
+  <!-- PLAYER ROW -->
+  <div class="player-row">
+    <span class="rank gold">1</span>
+    <span class="player">
+      <img src="https://mc-heads.net/avatar/Steve/40">
+      Marlowww
+    </span>
+    <span class="region na">NA</span>
+    <span class="tiers">
+      <span class="tier ht">HT1</span>
+      <span class="tier lt">LT1</span>
+      <span class="tier ht">HT2</span>
+    </span>
+  </div>
 
-  <!-- RULES -->
-  <section id="rules" class="tab rules">
-    <h2>Rules</h2>
-    <ul>
-      <li>All tiers are based on **verified PvP evidence**.</li>
-      <li>Players must use **legit clients only**.</li>
-      <li>No macros, cheats, or unfair modifications.</li>
-      <li>Ping and region are taken into account.</li>
-      <li>Tier placements are decided by staff consensus.</li>
-      <li>Players may be re-tested at any time.</li>
-      <li>Respect testers and staff decisions.</li>
-      <li>Faking clips or impersonation = blacklist.</li>
-    </ul>
-  </section>
-
-  <!-- DISCORD -->
-  <section id="discord" class="tab discord">
-    <h2>Join the Discord</h2>
-    <p>All tests, updates, and discussions happen here.</p>
-    <a href="https://discord.gg/dNvcJqn54" target="_blank">
-      https://discord.gg/dNvcJqn54
-    </a>
-  </section>
+  <div class="player-row">
+    <span class="rank silver">2</span>
+    <span class="player">
+      <img src="https://mc-heads.net/avatar/Alex/40">
+      ItzRealMe
+    </span>
+    <span class="region eu">EU</span>
+    <span class="tiers">
+      <span class="tier ht">HT3</span>
+      <span class="tier lt">LT2</span>
+      <span class="tier lt">LT3</span>
+    </span>
+  </div>
 
 </main>
 
