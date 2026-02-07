@@ -5,43 +5,43 @@
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #2b0000, #000);
+  background: #0b0b0b;
   color: white;
 }
 
 header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 15px;
 }
 
 header h1 {
-  font-size: 3rem;
   color: #ff3b3b;
-  text-shadow: 0 0 15px red;
+  font-size: 2.8rem;
+  text-shadow: 0 0 10px red;
 }
 
-nav {
+.mode-bar {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-bottom: 20px;
+  gap: 8px;
+  padding: 10px;
+  background: #111;
 }
 
-nav button {
+.mode-bar button {
   background: #111;
   border: 1px solid red;
   color: white;
-  padding: 10px 18px;
+  padding: 8px 14px;
   cursor: pointer;
 }
 
-nav button:hover {
+.mode-bar button:hover {
   background: red;
 }
 
-main {
-  max-width: 900px;
+.tiers {
+  max-width: 600px;
   margin: auto;
   padding: 20px;
 }
@@ -54,26 +54,20 @@ main {
   display: block;
 }
 
-.card {
-  background: #111;
-  border-left: 4px solid red;
+.tier {
+  display: flex;
+  align-items: center;
+  background: #141414;
+  margin: 6px 0;
   padding: 10px;
-  margin: 6px 0 14px;
+  border-left: 4px solid red;
 }
 
-.glow {
-  box-shadow: 0 0 12px red;
+.tier span {
+  width: 60px;
+  font-weight: bold;
+  color: #ff3b3b;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  opacity: 0.7;
-}
-nav select {
-  background: #111;
-  color: white;
-  border: 1px solid red;
-  padding: 12px 16px;
-  font-size: 16px;
-}
+.ht1 { box-shadow: 0 0 10px red; }
+
