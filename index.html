@@ -1,95 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SNsentierz Rankings</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SNsentierz</title>
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #111;
+      --panel-2: #151515;
+      --red: #8b1e1e;
+      --red-soft: #5a1414;
+      --text: #e6e6e6;
+      --muted: #9a9a9a;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* TOP BAR */
+    .topbar {
+      background: linear-gradient(to bottom, #0f0f0f, #0a0a0a);
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--red-soft);
+    }
+
+    .title {
+      color: var(--red);
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* MAIN NAV */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--panel);
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .nav button {
+      background: transparent;
+      border: 1px solid #222;
+      color: var(--text);
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .nav button.active,
+    .nav button:hover {
+      border-color: var(--red);
+      background: rgba(139,30,30,0.15);
+      color: #fff;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* TABLE */
+    .table {
+      background: var(--panel-2);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px #1c1c1c;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 60px 1fr 120px 240px;
+      padding: 14px 18px;
+      align-items: center;
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .row.header {
+      background: #0f0f0f;
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    .rank {
+      color: #f0c36c;
+      font-weight: bold;
+    }
+
+    .player {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .player img {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: #222;
+    }
+
+    .region {
+      background: #222;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .tiers span {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: #222;
+    }
+
+    .ht { background: var(--red-soft); color: #fff; }
+    .lt { background: #2a2a2a; }
+
+    /* PANELS */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* RULES */
+    .rules ul {
+      line-height: 1.8;
+    }
+
+    .rules li {
+      color: var(--muted);
+    }
+
+    /* DISCORD */
+    .discord a {
+      display: inline-block;
+      padding: 14px 20px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
-<header class="topbar">
-  <h1>SNsentierz</h1>
-</header>
-
-<nav class="mode-tabs">
-  <button class="active" onclick="showTab('overall', this)">Overall</button>
-  <button onclick="showTab('sword', this)">Sword</button>
-  <button onclick="showTab('axe', this)">Axe</button>
-  <button onclick="showTab('rules', this)">Rules</button>
-  <button onclick="showTab('discord', this)">Discord</button>
-</nav>
-
-<main>
-
-  <!-- TABLE HEADER -->
-  <div class="table-header">
-    <span>#</span>
-    <span>Player</span>
-    <span>Region</span>
-    <span>Tiers</span>
+  <div class="topbar">
+    <div class="title">SNsentierz</div>
   </div>
 
-  <!-- OVERALL -->
-  <section id="overall" class="tab active">
-    <div class="player-row">
-      <span class="rank gold">1</span>
-      <span class="player"><img src="https://mc-heads.net/avatar/Steve/40">PlayerOne</span>
-      <span class="region na">NA</span>
-      <span class="tiers"><span class="tier ht">HT1</span><span class="tier lt">LT1</span></span>
+    <div class="nav">
+    <button class="active" onclick="showPanel('overall', this)">Overall</button>
+    <button onclick="showPanel('sword', this)">Sword</button>
+    <button onclick="showPanel('mace', this)">Mace</button>
+    <button onclick="showPanel('spearmace', this)">SpearMace</button>
+    <button onclick="showPanel('xbowsmp', this)">XBowSMP</button>
+    <button onclick="showPanel('updsmp', this)">UpdSMP</button>
+    <button onclick="showPanel('rules', this)">Rules</button>
+    <button onclick="showPanel('discord', this)">Discord</button>
+  </div>
+
+  <div class="content">
+
+    <!-- OVERALL -->
+    <div id="overall" class="panel active">
+      <div class="table">
+        <div class="row header">
+          <div>#</div><div>Player</div><div>Region</div><div>Tiers</div>
+        </div>
+
+        <div class="row">
+          <div class="rank">1</div>
+          <div class="player"><img><span>PlayerOne</span></div>
+          <div class="region">NA</div>
+          <div class="tiers">
+            <span class="ht">HT1</span><span class="lt">LT1</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="player-row">
-      <span class="rank silver">2</span>
-      <span class="player"><img src="https://mc-heads.net/avatar/Alex/40">PlayerTwo</span>
-      <span class="region eu">EU</span>
-      <span class="tiers"><span class="tier ht">HT2</span><span class="tier lt">LT2</span></span>
+    <!-- SWORD -->
+    <div id="sword" class="panel">
+      <div class="table">
+        <div class="row header">
+          <div>#</div><div>Player</div><div>Region</div><div>Tiers</div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- SWORD -->
-  <section id="sword" class="tab">
-    <div class="player-row">
-      <span class="rank gold">1</span>
-      <span class="player"><img src="https://mc-heads.net/avatar/Notch/40">SwordGod</span>
-      <span class="region na">NA</span>
-      <span class="tiers"><span class="tier ht">HT1</span></span>
+    <!-- AXE -->
+    <div id="axe" class="panel">
+      <div class="table">
+        <div class="row header">
+          <div>#</div><div>Player</div><div>Region</div><div>Tiers</div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- AXE -->
-  <section id="axe" class="tab">
-    <div class="player-row">
-      <span class="rank gold">1</span>
-      <span class="player"><img src="https://mc-heads.net/avatar/Dream/40">AxeKing</span>
-      <span class="region eu">EU</span>
-      <span class="tiers"><span class="tier ht">HT1</span></span>
+    <!-- RULES -->
+    <div id="rules" class="panel rules">
+      <h2>Rules</h2>
+      <ul>
+        <li>No cheats, macros, or unfair mods</li>
+        <li>Vanilla / allowed clients only</li>
+        <li>Evidence must be real and unedited</li>
+        <li>Ping and region are considered</li>
+        <li>Staff decisions are final</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- RULES -->
-  <section id="rules" class="tab rules">
-    <h2>Rules</h2>
-    <ul>
-      <li>No cheats, macros, or unfair mods.</li>
-      <li>Legit Minecraft clients only.</li>
-      <li>Evidence must be real and unedited.</li>
-      <li>Ping and region are considered.</li>
-      <li>Staff decisions are final.</li>
-      <li>Faking clips = blacklist.</li>
-    </ul>
-  </section>
+    <!-- DISCORD -->
+    <div id="discord" class="panel discord">
+      <h2>Discord</h2>
+      <a href="https://discord.gg/dNvcJqn54" target="_blank">Join SNsentierz Discord</a>
+    </div>
 
-  <!-- DISCORD -->
-  <section id="discord" class="tab discord">
-    <h2>Join the Discord</h2>
-    <p>All tests and updates happen here:</p>
-    <a href="https://discord.gg/dNvcJqn54" target="_blank">
-      https://discord.gg/dNvcJqn54
-    </a>
-  </section>
+  </div>
 
-</main>
+  <script>
+    function showPanel(id, btn) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
 
-<script src="script.js"></script>
+      document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
