@@ -3,69 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SNsentierz | PvP Tiers</title>
+  <title>SNsentierz Tiers</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <h1>SNsentierz</h1>
-  <p>Competitive Minecraft Tier List</p>
 </header>
 
-<nav class="mode-bar">
+<nav class="tabs">
   <button onclick="showTab('sword')">Sword</button>
   <button onclick="showTab('axe')">Axe</button>
   <button onclick="showTab('uhc')">UHC</button>
   <button onclick="showTab('crystal')">Crystal</button>
   <button onclick="showTab('smp')">SMP</button>
+  <button onclick="showTab('rules')">Rules</button>
+  <button onclick="showTab('discord')">Discord</button>
 </nav>
 
-<main class="tiers">
+<main>
 
-  <!-- Sword -->
+  <!-- SWORD -->
   <section id="sword" class="tab active">
-    <div class="tier ht1"><span>HT1</span> Player1</div>
-    <div class="tier ht2"><span>HT2</span> Player2</div>
-    <div class="tier lt3"><span>LT3</span> Player3</div>
-    <div class="tier lt4"><span>LT4</span> Player4</div>
-    <div class="tier lt5"><span>LT5</span> Player5</div>
+    <div class="row"><span>HT1</span> Player</div>
+    <div class="row"><span>LT1</span> Player</div>
+    <div class="row"><span>HT2</span> Player</div>
+    <div class="row"><span>LT2</span> Player</div>
+    <div class="row"><span>HT3</span> Player</div>
+    <div class="row"><span>LT3</span> Player</div>
+    <div class="row"><span>HT4</span> Player</div>
+    <div class="row"><span>LT4</span> Player</div>
+    <div class="row"><span>HT5</span> Player</div>
+    <div class="row"><span>LT5</span> Player</div>
   </section>
 
-  <!-- Axe -->
+  <!-- AXE -->
   <section id="axe" class="tab">
-    <div class="tier ht1"><span>HT1</span> PlayerA</div>
-    <div class="tier ht2"><span>HT2</span> PlayerB</div>
-    <div class="tier lt3"><span>LT3</span> PlayerC</div>
-    <div class="tier lt4"><span>LT4</span> PlayerD</div>
-    <div class="tier lt5"><span>LT5</span> PlayerE</div>
+    <div class="row"><span>HT1</span> Player</div>
+    <div class="row"><span>LT1</span> Player</div>
+    <div class="row"><span>HT2</span> Player</div>
+    <div class="row"><span>LT2</span> Player</div>
+    <div class="row"><span>HT3</span> Player</div>
+    <div class="row"><span>LT3</span> Player</div>
+    <div class="row"><span>HT4</span> Player</div>
+    <div class="row"><span>LT4</span> Player</div>
+    <div class="row"><span>HT5</span> Player</div>
+    <div class="row"><span>LT5</span> Player</div>
   </section>
 
-  <!-- UHC -->
-  <section id="uhc" class="tab">
-    <div class="tier ht1"><span>HT1</span> PlayerU1</div>
-    <div class="tier ht2"><span>HT2</span> PlayerU2</div>
-    <div class="tier lt3"><span>LT3</span> PlayerU3</div>
-    <div class="tier lt4"><span>LT4</span> PlayerU4</div>
-    <div class="tier lt5"><span>LT5</span> PlayerU5</div>
+  <!-- RULES -->
+  <section id="rules" class="tab rules">
+    <h2>Rules</h2>
+    <ul>
+      <li>All tiers are based on **verified PvP evidence**.</li>
+      <li>Players must use **legit clients only**.</li>
+      <li>No macros, cheats, or unfair modifications.</li>
+      <li>Ping and region are taken into account.</li>
+      <li>Tier placements are decided by staff consensus.</li>
+      <li>Players may be re-tested at any time.</li>
+      <li>Respect testers and staff decisions.</li>
+      <li>Faking clips or impersonation = blacklist.</li>
+    </ul>
   </section>
 
-  <!-- Crystal -->
-  <section id="crystal" class="tab">
-    <div class="tier ht1"><span>HT1</span> PlayerC1</div>
-    <div class="tier ht2"><span>HT2</span> PlayerC2</div>
-    <div class="tier lt3"><span>LT3</span> PlayerC3</div>
-    <div class="tier lt4"><span>LT4</span> PlayerC4</div>
-    <div class="tier lt5"><span>LT5</span> PlayerC5</div>
-  </section>
-
-  <!-- SMP -->
-  <section id="smp" class="tab">
-    <div class="tier ht1"><span>HT1</span> PlayerS1</div>
-    <div class="tier ht2"><span>HT2</span> PlayerS2</div>
-    <div class="tier lt3"><span>LT3</span> PlayerS3</div>
-    <div class="tier lt4"><span>LT4</span> PlayerS4</div>
-    <div class="tier lt5"><span>LT5</span> PlayerS5</div>
+  <!-- DISCORD -->
+  <section id="discord" class="tab discord">
+    <h2>Join the Discord</h2>
+    <p>All tests, updates, and discussions happen here.</p>
+    <a href="https://discord.gg/dNvcJqn54" target="_blank">
+      https://discord.gg/dNvcJqn54
+    </a>
   </section>
 
 </main>
