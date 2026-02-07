@@ -1,84 +1,260 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Inter, Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  background: #141414;
-  color: #e0e0e0;
+  background: #101010;
+  color: #e5e5e5;
 }
 
-header {
+/* Top */
+.topbar {
   text-align: center;
-  padding: 20px;
+  padding: 18px;
   border-bottom: 1px solid #2a0000;
 }
 
-header h1 {
-  color: #8b1c1c;
+.topbar h1 {
+  color: #7d1a1a;
   margin: 0;
 }
 
-.tabs {
+/* Tabs */
+.mode-tabs {
   display: flex;
-  gap: 8px;
-  padding: 10px;
   justify-content: center;
-  background: #161616;
-  border-bottom: 1px solid #2a0000;
+  gap: 6px;
+  background: #141414;
+  padding: 10px;
 }
 
-.tabs button {
-  background: transparent;
-  border: none;
-  color: #ccc;
+.mode-tabs button {
+  background: #161616;
+  border: 1px solid #2a0000;
+  color: #bbb;
   padding: 8px 14px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-.tabs button:hover {
+.mode-tabs button:hover,
+.mode-tabs button.active {
   color: #b22222;
+  background: #1c1c1c;
 }
 
+/* Table */
 main {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
   padding: 20px;
 }
 
-.tab {
-  display: none;
-}
-
-.tab.active {
-  display: block;
-}
-
-.row {
+.table-header,
+.player-row {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 50px 1.5fr 100px 2fr;
+  align-items: center;
+  padding: 12px;
+}
+
+.table-header {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.player-row {
+  background: #151515;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.player-row:hover {
+  background: #1b1b1b;
+  transform: translateY(-2px);
+}
+
+/* Rank */
+.rank {
+  font-weight: bold;
+}
+
+.rank.gold { color: #d4af37; }
+.rank.silver { color: #aaa; }
+
+/* Player */
+.player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player img {
+  border-radius: 4px;
+}
+
+/* Region */
+.region {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.region.na { background: #3a1a1a; }
+.region.eu { background: #1a3a2a; }
+
+/* Tier pills */
+.tiers {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tier {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.tier.ht {
+  background: #2a0000;
+  color: #ff5a5a;
+}
+
+.tier.lt {
+  background: #1a1a1a;
+  color: #aaa;
+}
+* {
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #101010;
+  color: #e5e5e5;
+}
+
+/* Top */
+.topbar {
+  text-align: center;
+  padding: 18px;
+  border-bottom: 1px solid #2a0000;
+}
+
+.topbar h1 {
+  color: #7d1a1a;
+  margin: 0;
+}
+
+/* Tabs */
+.mode-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  background: #141414;
   padding: 10px;
-  border-bottom: 1px solid #1f1f1f;
 }
 
-.row span {
-  color: #8b1c1c;
-  font-weight: bold;
+.mode-tabs button {
+  background: #161616;
+  border: 1px solid #2a0000;
+  color: #bbb;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.rules ul {
-  padding-left: 20px;
-}
-
-.rules li {
-  margin: 8px 0;
-}
-
-.discord a {
+.mode-tabs button:hover,
+.mode-tabs button.active {
   color: #b22222;
-  text-decoration: none;
+  background: #1c1c1c;
+}
+
+/* Table */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.table-header,
+.player-row {
+  display: grid;
+  grid-template-columns: 50px 1.5fr 100px 2fr;
+  align-items: center;
+  padding: 12px;
+}
+
+.table-header {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.player-row {
+  background: #151515;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.player-row:hover {
+  background: #1b1b1b;
+  transform: translateY(-2px);
+}
+
+/* Rank */
+.rank {
   font-weight: bold;
 }
 
+.rank.gold { color: #d4af37; }
+.rank.silver { color: #aaa; }
 
+/* Player */
+.player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player img {
+  border-radius: 4px;
+}
+
+/* Region */
+.region {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.region.na { background: #3a1a1a; }
+.region.eu { background: #1a3a2a; }
+
+/* Tier pills */
+.tiers {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tier {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.tier.ht {
+  background: #2a0000;
+  color: #ff5a5a;
+}
+
+.tier.lt {
+  background: #1a1a1a;
+  color: #aaa;
+}
