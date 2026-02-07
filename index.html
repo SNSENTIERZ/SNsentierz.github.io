@@ -1,93 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SNsentierz | PvP Tiers</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>SNsentierz</h1>
-    <p>Competitive Minecraft PvP Rankings</p>
-  </header>
+<header>
+  <h1>SNsentierz</h1>
+  <p>Competitive Minecraft Tier List</p>
+</header>
 
-  <nav>
-  <select onchange="showTab(this.value)">
-    <option value="sword">SpearMace PvP</option>
-    <option value="axe">Axe PvP</option>
-    <option value="uhc">dia mace</option>
-    <option value="uhc">UHC</option>
-    <option value="crystal">Crystal</option>
-    <option value="smp">XBOWSMP PvP</option>
-    <option value="rules">Rules</option>
-  </select>
+<nav class="mode-bar">
+  <button onclick="showTab('sword')">Sword</button>
+  <button onclick="showTab('axe')">Axe</button>
+  <button onclick="showTab('uhc')">UHC</button>
+  <button onclick="showTab('crystal')">Crystal</button>
+  <button onclick="showTab('smp')">SMP</button>
 </nav>
 
+<main class="tiers">
 
-  <main>
+  <!-- Sword -->
+  <section id="sword" class="tab active">
+    <div class="tier ht1"><span>HT1</span> Player1</div>
+    <div class="tier ht2"><span>HT2</span> Player2</div>
+    <div class="tier lt3"><span>LT3</span> Player3</div>
+    <div class="tier lt4"><span>LT4</span> Player4</div>
+    <div class="tier lt5"><span>LT5</span> Player5</div>
+  </section>
 
-    <section id="sword" class="tab active">
-      <h2>Sword PvP</h2>
-      <h3>HT1</h3><div class="card glow">Player1</div>
-      <h3>HT2</h3><div class="card">Player2</div>
-      <h3>LT3</h3><div class="card">Player3</div>
-      <h3>LT4</h3><div class="card">Player4</div>
-      <h3>LT5</h3><div class="card">Player5</div>
-    </section>
+  <!-- Axe -->
+  <section id="axe" class="tab">
+    <div class="tier ht1"><span>HT1</span> PlayerA</div>
+    <div class="tier ht2"><span>HT2</span> PlayerB</div>
+    <div class="tier lt3"><span>LT3</span> PlayerC</div>
+    <div class="tier lt4"><span>LT4</span> PlayerD</div>
+    <div class="tier lt5"><span>LT5</span> PlayerE</div>
+  </section>
 
-    <section id="axe" class="tab">
-      <h2>Axe PvP</h2>
-      <h3>HT1</h3><div class="card glow">PlayerA</div>
-      <h3>HT2</h3><div class="card">twlio</div>
-      <h3>LT3</h3><div class="card">PlayerC</div>
-      <h3>LT4</h3><div class="card">PlayerD</div>
-      <h3>LT5</h3><div class="card">PlayerE</div>
-    </section>
+  <!-- UHC -->
+  <section id="uhc" class="tab">
+    <div class="tier ht1"><span>HT1</span> PlayerU1</div>
+    <div class="tier ht2"><span>HT2</span> PlayerU2</div>
+    <div class="tier lt3"><span>LT3</span> PlayerU3</div>
+    <div class="tier lt4"><span>LT4</span> PlayerU4</div>
+    <div class="tier lt5"><span>LT5</span> PlayerU5</div>
+  </section>
 
-    <section id="uhc" class="tab">
-      <h2>UHC</h2>
-      <h3>HT1</h3><div class="card glow">PlayerU1</div>
-      <h3>HT2</h3><div class="card">PlayerU2</div>
-      <h3>LT3</h3><div class="card">PlayerU3</div>
-      <h3>LT4</h3><div class="card">PlayerU4</div>
-      <h3>LT5</h3><div class="card">PlayerU5</div>
-    </section>
+  <!-- Crystal -->
+  <section id="crystal" class="tab">
+    <div class="tier ht1"><span>HT1</span> PlayerC1</div>
+    <div class="tier ht2"><span>HT2</span> PlayerC2</div>
+    <div class="tier lt3"><span>LT3</span> PlayerC3</div>
+    <div class="tier lt4"><span>LT4</span> PlayerC4</div>
+    <div class="tier lt5"><span>LT5</span> PlayerC5</div>
+  </section>
 
-    <section id="crystal" class="tab">
-      <h2>Crystal</h2>
-      <h3>HT1</h3><div class="card glow">PlayerC1</div>
-      <h3>HT2</h3><div class="card">PlayerC2</div>
-      <h3>LT3</h3><div class="card">PlayerC3</div>
-      <h3>LT4</h3><div class="card">PlayerC4</div>
-      <h3>LT5</h3><div class="card">PlayerC5</div>
-    </section>
+  <!-- SMP -->
+  <section id="smp" class="tab">
+    <div class="tier ht1"><span>HT1</span> PlayerS1</div>
+    <div class="tier ht2"><span>HT2</span> PlayerS2</div>
+    <div class="tier lt3"><span>LT3</span> PlayerS3</div>
+    <div class="tier lt4"><span>LT4</span> PlayerS4</div>
+    <div class="tier lt5"><span>LT5</span> PlayerS5</div>
+  </section>
 
-    <section id="smp" class="tab">
-      <h2>SMP PvP</h2>
-      <h3>HT1</h3><div class="card glow">PlayerS1</div>
-      <h3>HT2</h3><div class="card">PlayerS2</div>
-      <h3>LT3</h3><div class="card">PlayerS3</div>
-      <h3>LT4</h3><div class="card">PlayerS4</div>
-      <h3>LT5</h3><div class="card">PlayerS5</div>
-    </section>
+</main>
 
-    <section id="rules" class="tab">
-      <h2>Rules</h2>
-      <ul>
-        <li>No cheating or macros</li>
-        <li>All fights must be recorded</li>
-        <li>Staff decisions are final</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© 2026 SNsentierz</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
