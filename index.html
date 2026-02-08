@@ -1,181 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SNsentierz Tiers</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #eaeaea;
-    }
+<meta charset="UTF-8">
+<title>SNsentierz Tiers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    header {
-      background: #140000;
-      border-bottom: 2px solid #7a0000;
-      padding: 12px 20px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #ff3b3b;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #eee;
+}
 
-    .nav {
-      display: flex;
-      gap: 10px;
-      padding: 10px 20px;
-      background: #111;
-      border-bottom: 1px solid #300;
-    }
+header {
+  padding: 14px 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff2e2e;
+  background: #120000;
+  border-bottom: 2px solid #5a0000;
+}
 
-    .nav button {
-      background: none;
-      border: none;
-      color: #ccc;
-      font-size: 14px;
-      cursor: pointer;
-      padding: 6px 10px;
-    }
+.nav {
+  display: flex;
+  gap: 14px;
+  padding: 10px 20px;
+  background: #111;
+  border-bottom: 1px solid #300;
+}
 
-    .nav button.active {
-      color: #ff3b3b;
-      border-bottom: 2px solid #ff3b3b;
-    }
+.nav button {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 8px;
+}
 
-    .panel {
-      display: none;
-      padding: 20px;
-    }
+.nav button.active {
+  color: #ff2e2e;
+  border-bottom: 2px solid #ff2e2e;
+}
 
-    .panel.active {
-      display: block;
-    }
+.panel {
+  display: none;
+  padding: 20px;
+}
 
-    .table {
-      max-width: 1000px;
-      margin: auto;
-    }
+.panel.active {
+  display: block;
+}
 
-    .row {
-      display: grid;
-      grid-template-columns: 60px 1fr 100px 200px;
-      align-items: center;
-      padding: 10px;
-      border-bottom: 1px solid #222;
-    }
+.table {
+  max-width: 1000px;
+  margin: auto;
+}
 
-    .row.header {
-      font-weight: bold;
-      color: #ff3b3b;
-      border-bottom: 2px solid #7a0000;
-    }
+.row {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px 160px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #222;
+}
 
-    .player {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.row.header {
+  color: #ff2e2e;
+  font-weight: bold;
+  border-bottom: 2px solid #5a0000;
+}
 
-    .player img {
-      border-radius: 4px;
-    }
+.player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .ht {
-      color: #ff5555;
-      font-weight: bold;
-      margin-right: 6px;
-    }
+.player img {
+  border-radius: 4px;
+}
 
-    .lt {
-      color: #ff9999;<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SNsentierz Tiers</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #eaeaea;
-    }
+.ht {
+  color: #ff4444;
+  font-weight: bold;
+}
 
-    header {
-      background: #140000;
-      border-bottom: 2px solid #7a0000;
-      padding: 12px 20px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #ff3b3b;
-    }
+.lt {
+  color: #ff8888;
+  font-weight: bold;
+}
+</style>
+</head>
 
-    .nav {
-      display: flex;
-      gap: 10px;
-      padding: 10px 20px;
-      background: #111;
-      border-bottom: 1px solid #300;
-    }
+<body>
 
-    .nav button {
-      background: none;
-      border: none;
-      color: #ccc;
-      font-size: 14px;
-      cursor: pointer;
-      padding: 6px 10px;
-    }
+<header>SNsentierz</header>
 
-    .nav button.active {
-      color: #ff3b3b;
-      border-bottom: 2px solid #ff3b3b;
-    }
+<div class="nav">
+  <button class="active" onclick="openTab('sword', this)">Sword</button>
+  <button onclick="openTab('mace', this)">Mace</button>
+  <button onclick="openTab('spearmace', this)">SpearMace</button>
+  <button onclick="openTab('xbowsmp', this)">XBowSMP</button>
+  <button onclick="openTab('updsmp', this)">UpdSMP</button>
+  <button onclick="openTab('rules', this)">Rules</button>
+  <button onclick="openTab('discord', this)">Discord</button>
+</div>
 
-    .panel {
-      display: none;
-      padding: 20px;
-    }
+<!-- SWORD -->
+<div id="sword" class="panel active">
+  <div class="table">
+    <div class="row header">
+      <div>#</div><div>Player</div><div>Region</div><div>Tier</div>
+    </div>
 
-    .panel.active {
-      display: block;
-    }
+    <!-- 🔥 BOT PASTE AREA (SWORD) 🔥 -->
+  </div>
+</div>
 
-    .table {
-      max-width: 1000px;
-      margin: auto;
-    }
+<!-- MACE -->
+<div id="mace" class="panel">
+  <div class="table">
+    <div class="row header">
+      <div>#</div><div>Player</div><div>Region</div><div>Tier</div>
+    </div>
 
-    .row {
-      display: grid;
-      grid-template-columns: 60px 1fr 100px 200px;
-      align-items: center;
-      padding: 10px;
-      border-bottom: 1px solid #222;
-    }
+    <!-- 🔥 BOT PASTE AREA (MACE) 🔥 -->
+  </div>
+</div>
 
-    .row.header {
-      font-weight: bold;
-      color: #ff3b3b;
-      border-bottom: 2px solid #7a0000;
-    }
+<!-- SPEARMACE -->
+<div id="spearmace" class="panel">
+  <div class="table">
+    <div class="row header">
+      <div>#</div><div>Player</div><div>Region</div><div>Tier</div>
+    </div>
 
-    .player {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    <!-- 🔥 BOT PASTE AREA (SPEARMACE) 🔥 -->
+  </div>
+</div>
 
-    .player img {
-      border-radius: 4px;
-    }
+<!-- XBOWSMP -->
+<div id="xbowsmp" class="panel">
+  <div class="table">
+    <div class="row header">
+      <div>#</div><div>Player</div><div>Region</div><div>Tier</div>
+    </div>
 
-    .ht {
-      color: #ff5555;
-      font-weight: bold;
-      margin-right: 6px;
-    }
+    <!-- 🔥 BOT PASTE AREA (XBOWSMP) 🔥 -->
+  </div>
+</div>
 
-    .lt {
-      color: #ff9999;
+<!-- UPDSMP -->
+<div id="updsmp" class="panel">
+  <div class="table">
+    <div class="row header">
+      <div>#</div><div>Player</div><div>Region</div><div>Tier</div>
+    </div>
+
+    <!-- 🔥 BOT PASTE AREA (UPDSMP) 🔥 -->
+  </div>
+</div>
+
+<!-- RULES -->
+<div id="rules" class="panel">
+  <div class="table">
+    <p>
+      • No boosting<br>
+      • No alts<br>
+      • No toxicity<br>
+      • Staff decisions are final
+    </p>
+  </div>
+</div>
+
+<!-- DISCORD -->
+<div id="discord" class="panel">
+  <div class="table">
+    <a href="https://discord.gg/dNvcJqn54" style="color:#ff2e2e;font-size:18px;">
+      Join the SNsentierz Discord
+    </a>
+  </div>
+</div>
+
+<script>
+function openTab(id, btn) {
+  document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".nav button").forEach(b => b.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
+}
+</script>
+
+</body>
+</html>
