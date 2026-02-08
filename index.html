@@ -1,255 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SNsentierz</title>
-
+  <meta charset="UTF-8">
+  <title>SNsentierz Tiers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root {
-      --bg: #0b0b0b;
-      --panel: #111;
-      --panel-2: #151515;
-      --red: #8b1e1e;
-      --red-soft: #5a1414;
-      --text: #e6e6e6;
-      --muted: #9a9a9a;
-    }
-
-    * {
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #eaeaea;
     }
 
-    /* TOP BAR */
-    .topbar {
-      background: linear-gradient(to bottom, #0f0f0f, #0a0a0a);
-      padding: 20px 40px;
-      border-bottom: 1px solid var(--red-soft);
-    }
-
-    .title {
-      color: var(--red);
-      font-size: 28px;
+    header {
+      background: #140000;
+      border-bottom: 2px solid #7a0000;
+      padding: 12px 20px;
+      font-size: 20px;
       font-weight: bold;
-      text-align: center;
+      color: #ff3b3b;
     }
 
-    /* MAIN NAV */
     .nav {
       display: flex;
-      justify-content: center;
-      gap: 12px;
-      padding: 16px;
-      background: var(--panel);
-      border-bottom: 1px solid #1f1f1f;
+      gap: 10px;
+      padding: 10px 20px;
+      background: #111;
+      border-bottom: 1px solid #300;
     }
 
     .nav button {
-      background: transparent;
-      border: 1px solid #222;
-      color: var(--text);
-      padding: 10px 18px;
-      border-radius: 8px;
+      background: none;
+      border: none;
+      color: #ccc;
+      font-size: 14px;
       cursor: pointer;
-      transition: 0.2s;
+      padding: 6px 10px;
     }
 
-    .nav button.active,
-    .nav button:hover {
-      border-color: var(--red);
-      background: rgba(139,30,30,0.15);
-      color: #fff;
+    .nav button.active {
+      color: #ff3b3b;
+      border-bottom: 2px solid #ff3b3b;
     }
 
-    /* CONTENT */
-    .content {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
+    .panel {
+      display: none;
+      padding: 20px;
     }
 
-    /* TABLE */
+    .panel.active {
+      display: block;
+    }
+
     .table {
-      background: var(--panel-2);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 0 1px #1c1c1c;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .row {
       display: grid;
-      grid-template-columns: 60px 1fr 120px 240px;
-      padding: 14px 18px;
+      grid-template-columns: 60px 1fr 100px 200px;
       align-items: center;
-      border-bottom: 1px solid #1f1f1f;
+      padding: 10px;
+      border-bottom: 1px solid #222;
     }
 
     .row.header {
-      background: #0f0f0f;
-      color: var(--muted);
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .row:last-child {
-      border-bottom: none;
-    }
-
-    .rank {
-      color: #f0c36c;
       font-weight: bold;
+      color: #ff3b3b;
+      border-bottom: 2px solid #7a0000;
     }
 
     .player {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .player img {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      background: #222;
+      border-radius: 4px;
     }
 
-    .region {
-      background: #222;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 12px;
-      text-align: center;
-    }
-
-    .tiers span {
-      display: inline-block;
+    .ht {
+      color: #ff5555;
+      font-weight: bold;
       margin-right: 6px;
+    }
+
+    .lt {
+      color: #ff9999;<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SNsentierz Tiers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #eaeaea;
+    }
+
+    header {
+      background: #140000;
+      border-bottom: 2px solid #7a0000;
+      padding: 12px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff3b3b;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      padding: 10px 20px;
+      background: #111;
+      border-bottom: 1px solid #300;
+    }
+
+    .nav button {
+      background: none;
+      border: none;
+      color: #ccc;
+      font-size: 14px;
+      cursor: pointer;
       padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      background: #222;
     }
 
-    .ht { background: var(--red-soft); color: #fff; }
-    .lt { background: #2a2a2a; }
-
-    /* PANELS */
-    .panel { display: none; }
-    .panel.active { display: block; }
-
-    /* RULES */
-    .rules ul {
-      line-height: 1.8;
+    .nav button.active {
+      color: #ff3b3b;
+      border-bottom: 2px solid #ff3b3b;
     }
 
-    .rules li {
-      color: var(--muted);
+    .panel {
+      display: none;
+      padding: 20px;
     }
 
-    /* DISCORD */
-    .discord a {
-      display: inline-block;
-      padding: 14px 20px;
-      background: var(--red);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 10px;
+    .panel.active {
+      display: block;
     }
-  </style>
-</head>
-<body>
 
-  <div class="topbar">
-    <div class="title">SNsentierz</div>
-  </div>
-
-    <div class="nav">
-    <button class="active" onclick="showPanel('overall', this)">Overall</button>
-    <button onclick="showPanel('sword', this)">Sword</button>
-    <button onclick="showPanel('mace', this)">Mace</button>
-    <button onclick="showPanel('spearmace', this)">SpearMace</button>
-    <button onclick="showPanel('xbowsmp', this)">XBowSMP</button>
-    <button onclick="showPanel('updsmp', this)">UpdSMP</button>
-    <button onclick="showPanel('rules', this)">Rules</button>
-    <button onclick="showPanel('discord', this)">Discord</button>
-  </div>
-
-  <div class="content">
-
-    <!-- OVERALL -->
-    <div id="overall" class="panel active">
-      <div class="table">
-        <div class="row header">
-          <div>#</div><div>Player</div><div>Region</div><div>Tiers</div>
-        </div>
-
-        <div class="row">
-          <div class="rank">1</div>
-          <div class="player"><img><span>PlayerOne</span></div>
-          <div class="region">NA</div>
-          <div class="tiers">
-            <span class="ht">HT1</span><span class="lt">LT1</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- SWORD -->
-    <div id="sword" class="panel">
-      <div class="table">
-        <div class="row header">
-          <div>#</div><div>Player</div><div>Region</div><div>Tiers</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- AXE -->
-    <div id="axe" class="panel">
-      <div class="table">
-        <div class="row header">
-          <div>#</div><div>Player</div><div>Region</div><div>Tiers</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RULES -->
-    <div id="rules" class="panel rules">
-      <h2>Rules</h2>
-      <ul>
-        <li>No cheats, macros, or unfair mods</li>
-        <li>Vanilla / allowed clients only</li>
-        <li>Evidence must be real and unedited</li>
-        <li>Ping and region are considered</li>
-        <li>Staff decisions are final</li>
-      </ul>
-    </div>
-
-    <!-- DISCORD -->
-    <div id="discord" class="panel discord">
-      <h2>Discord</h2>
-      <a href="https://discord.gg/dNvcJqn54" target="_blank">Join SNsentierz Discord</a>
-    </div>
-
-  </div>
-
-  <script>
-    function showPanel(id, btn) {
-      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-
-      document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    .table {
+      max-width: 1000px;
+      margin: auto;
     }
-  </script>
 
-</body>
-</html>
+    .row {
+      display: grid;
+      grid-template-columns: 60px 1fr 100px 200px;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #222;
+    }
+
+    .row.header {
+      font-weight: bold;
+      color: #ff3b3b;
+      border-bottom: 2px solid #7a0000;
+    }
+
+    .player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .player img {
+      border-radius: 4px;
+    }
+
+    .ht {
+      color: #ff5555;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+
+    .lt {
+      color: #ff9999;
